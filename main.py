@@ -4,7 +4,8 @@ from sql import connect, create_table, insert_record, commit
 config = ["elmundo.es","infolibre.es","laopinioncoruna.es",\
   "diariodesevilla.es","abc.es","lavanguardia.com","laverdad.es",\
   "ara.cat","diariodeleon.es","lavozdegalicia.es","latribunadealbacete.es",\
-  "noticiasdegipuzkoa.eus"]
+  "noticiasdegipuzkoa.eus","marca.com","as.com","sport.es","eleconomista.es",\
+  "elpais.com","expansion.com","eldiario.es","economiadigital.es"]
 
 conn = connect()
 if conn:

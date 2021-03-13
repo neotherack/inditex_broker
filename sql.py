@@ -9,7 +9,7 @@ def connect():
 
 def create_table(c):
     try:
-        sql="create table daily_news (url text not null, noisy_text text, clear_text text, encoded_values text, created_at datetime default current_datetime)"
+        sql="create table daily_news (url text not null, noisy_text text, clear_text text, encoded_values text, created_at datetime default current_timestamp)"
         c.execute(sql)
     except Exception as e:
         print(f"{e}")

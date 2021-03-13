@@ -1,8 +1,9 @@
 import sqlite3
 
+path="/home/pi/inditex_broker/"
 def connect():
     try:
-        return sqlite3.connect('data_websites.db')
+        return sqlite3.connect(path+'data_websites.db')
     except Exception as e:
         print(f"Connection failed\n{e}")
         return None

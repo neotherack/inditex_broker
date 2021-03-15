@@ -15,7 +15,7 @@ if conn:
         site = Website(url)
         print(f"{site.url} processed")
         #print(site.clear_text[site.OFFSET:5000+site.OFFSET])
-        insert_record(conn, site.url, site.noisy_text, site.clear_text, str(site.encoded_data))
+        insert_record(conn, site.url, site.noisy_text, site.clear_text, "")
 
     commit(conn)
     print("DB commit, you're done!")

@@ -20,13 +20,18 @@ class Website:
         self.url = url
         self.noisy_text = self.dump_website()
         self.clear_text = self.get_text()
-        self.encoded_data = self.encode()
+        self.encoded_data = ""
 
     def dump_website(self):
-        result = requests.get(self.url)
-        soup = BeautifulSoup(result.text, 'html.parser')
-        text = soup.get_text().lower().strip()
-        return text
+        web = requests.get(self.url)
+        web_bytes = web.content
+        try:
+            text = web_bytes.decode(web.encoding).encode(web.encoding).decode('utf-8')
+        except Exception as e:
+            text = web.text
+        soup = BeautifulSoup(text, 'html.parser')
+        noisy_text = soup.get_text().lower().strip()
+        return noisy_text
 
     def get_text(self):
         text = self.noisy_text
